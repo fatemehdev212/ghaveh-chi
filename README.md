@@ -1,2 +1,2 @@
 # ghaveh-chi
-A responsive website for Ghahve Chi café and store
+A modern, responsive café and coffee store website with a cozy Zen-inspired UI.
