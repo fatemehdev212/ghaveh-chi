@@ -1,0 +1,586 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: #fff4d5;
+    width: 100%;
+    overflow-x: hidden;
+    animation: fadeIn 0.75s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+}
+
+   /* ================= header & nav ================= */
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.head-hero {
+    width: 100%;
+    min-height: 30vh;
+    background: url('homebackground.jpg') center/cover no-repeat; 
+    display: flex;
+    font-weight: bold;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.container {
+    width: 100%;
+    min-height: 30vh;
+    background: #3e3e3928; 
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px); 
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+}
+
+.header-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff3f; 
+    backdrop-filter: blur(3px);
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.hero {
+    flex-grow: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(min-width: 768px){
+     .container, .head-hero {
+         min-height: 100vh;
+     }
+    .content h1 { font-size: 5rem; }
+}
+
+/* ================= main page scroll================= */
+.home-scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    padding: 20px 0px;
+    margin-top: 30px;
+    webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+}
+
+.home-scroll-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.home-card-wrapper {
+    display: flex;
+    gap: 25px;
+    width: max-content;
+    padding: 0 20px;
+}
+
+.home-intro-card {
+    width: 260px; 
+    height: 260px;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.home-intro-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.home-intro-card:hover img {
+    transform: scale(1.1); 
+}
+
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.85));
+    color: white;
+    text-align: right;
+}
+
+.btn-minimal {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-minimal:hover {
+    background: white;
+    color: #332111;
+}
+
+/* ================= our story ================= */
+.site-story {
+    background: #f5ebcc;
+    margin-top: 30%;
+    margin-bottom: 60px;
+    opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.site-story.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-story.is-visible .story-content {
+  filter: blur(0);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.story-content {
+    text-align: center;
+    padding: 40px 25px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    filter: blur(12px);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1.2s ease;
+}
+
+.site-story p {
+    text-align: justify;
+    line-height: 1.8rem;
+    color: #4a3b2a; 
+}
+
+.site-story hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to left, transparent, #c7a17a, transparent);
+    margin: 0 auto;
+    width: 80%;
+}
+
+/* ================== scrolls ===================== */
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    scroll-behavior: smooth; 
+    padding-bottom: 15px;
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none; /* حذف اسکرول‌بار در کروم و سافاری */
+}
+
+/* ================ coffeeshop section================ */
+.cofe-hero {
+    text-align: center;
+    color: #ffeabf;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+#coffeeshop {
+    background: url("cofe.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 80px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.cofe-title, .scroll-title {
+    color: #ffeabf;
+    display: inline-block;
+    border-bottom: 2px solid #ffeabf;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+}
+
+.scroll-item {
+    position: relative;
+    width: 180px;         
+    height: 180px;     
+    overflow: hidden;
+    cursor: pointer;
+    flex-shrink: 0;   
+    border-radius: 17px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* افکت هاور کارت‌های کافی شاپ */
+.scroll-item:hover {
+    transform: scale(1.03);
+}
+
+.scroll-item:hover .item-info {
+    transform: translateY(0); 
+}
+
+.scroll-item:hover img {
+    transform: scale(1.1); 
+}
+
+.item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85)); 
+    color: #fff;
+    padding: 15px 10px;
+    text-align: center;
+    transform: translateY(100%); 
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.item-info h3, .item-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+    color: #fff2df;
+}
+
+.item-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #ffdfaa;
+}
+/*  */
+.separator-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.animated-separator {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    height: 2px;
+    /* یک گرادینت که خط را به آرامی در دو طرف محو می‌کند */
+    background: linear-gradient(to right, transparent, #c7a17a, transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* انیمیشن درخشش و حرکت نور روی خط */
+.animated-separator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(199, 161, 122, 0.8), transparent);
+    animation: line-glow 3s infinite linear;
+}
+
+.separator-text {
+    position: absolute;
+    background: #fff4d5; 
+    padding: 0 18px;
+    color: #4a3b2a;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    animation: text-pulse 2s infinite ease-in-out alternate;
+}
+
+/* انیمیشن حرکت نور روی خط */
+@keyframes line-glow {
+    0% {
+        left: -50%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* انیمیشن پالس و تغییر ملایم رنگ متن وسط */
+@keyframes text-pulse {
+    0% {
+        transform: scale(1.1);
+        text-shadow: 0 0 5px rgba(199, 161, 122, 0.2);
+    }
+    100% {
+        transform: scale(1.05);
+        text-shadow: 0 0 15px rgba(199, 161, 122, 0.6);
+        color: #8c6034;
+    }
+}
+
+
+ /* ================ store section================= */
+#store {
+    background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.15)), url('store.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 30%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.store-hero {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.store-title {
+    color: #fff;
+    border-right: 3px solid #fff;
+    padding: 8px 14px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.store .scroll-item {
+    cursor: default;
+}
+
+.store .scroll-item:hover img {
+    transform: scale(1.05); 
+}
+
+.product-info h3, 
+.product-info h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #fff2df;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.item-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ffdfaa;
+    font-weight: bold;
+}
+
+.item-info .action {
+    display: inline-block;
+    margin-top: 10px; /* فاصله از متن بالا */
+    align-self: flex-start;
+    background: #ffdfaa9b;
+    backdrop-filter: blur(4px);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px; /* چون چیدمانت احتمالا فارسیه، سمت چپ باشه کلاسیک‌تره */
+    background: rgba(255, 255, 255, 0.2); /* شیشه‌ای و شفاف */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #333; /* یا رنگ تم خودت */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: #fff;
+    transform: translateY(-5px); /* یه پرش کوچولو به سمت بالا موقع هاور */
+}
+
+
+   
+   /* ===================footer=================== */
+   .footer{
+  background:
+    linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)),
+    url('back.jpg') center/cover no-repeat;
+
+  max-width: 1200px;
+  margin: 24px auto 0;
+  padding: 22px 28px;
+
+  color: #fff;
+  border-radius: 24px 24px 0 0;
+  
+}
+
+.footer-container{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.site-brand{ text-align: center; }
+.site-brand h2{ margin-bottom: 6px; }
+.site-brand p{ opacity: .9; line-height: 1.9; }
+
+.footer-form{
+  margin-top: 8px;
+  background: #ffffff4a;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.footer-form form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-form input,
+.footer-form textarea{
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 10px 14px;
+  outline: none;
+  color: #3b2a1f;
+  font-family: inherit;
+}
+
+.footer-form textarea{
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.footer-form button{
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #FFF8E1;
+  color: #5e3627;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.footer-form button:hover{ filter: brightness(.97); }
+
+.footer-form ::placeholder{ color: #666; }
+
+.footer-contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.items{ display: flex; gap: 16px; }
+
+.contact-item{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: #FFF8E1;
+  color: #5d3d27;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255,248,225,.65);
+  text-decoration: none;
+}
+
+.footer-last{
+  background: #FFF8E1;
+  color: #5e3627;
+  padding: 10px 20px;
+  margin-top: 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-align: center;
+}
